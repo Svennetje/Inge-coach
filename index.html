@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Coach</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Inge Coach</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #45a049;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #over-mij .profile-info {
+            display: flex;
+            align-items: center;
+        }
+
+        #over-mij .profile-info img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        #diensten ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #diensten ul li {
+            background-color: #e2e2e2;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .project {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form button {
+            padding: 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .profile-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info img {
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,12 +167,48 @@
     <section id="over-mij">
         <h2>Over Mij</h2>
         <div class="profile-info">
-            <img src="jouw_afbeelding.jpg" alt="Jouw Afbeelding" class="profile-image">
-            <p>Ik ben een ervaren coach die mensen helpt.</p>
+            <img src="OIP.jpg" alt="Jouw Afbeelding" class="profile-image">
+            <p>Ik ben een ervaren coach die mensen helpt hun doelen te bereiken en hun potentieel te maximaliseren. Met jarenlange ervaring in coaching en begeleiding, bied ik persoonlijke en professionele ondersteuning om jou te helpen groeien.</p>
         </div>
     </section>
     <section id="diensten">
         <h2>Diensten</h2>
         <ul>
             <li>Leefstijlcoach</li>
-            
+            <li>Vitaliteitscoach</li>
+            <li>Ervaringsdeskundige coach</li>
+        </ul>
+    </section>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <p>Bekijk enkele van mijn recente projecten:</p>
+        <div class="project">
+            <img src="project1.jpg" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Beschrijving van project 1.</p>
+        </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Beschrijving van project 2.</p>
+        </div>
+        <!-- Voeg meer projecten toe indien nodig -->
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Neem contact met mij op via het onderstaande formulier:</p>
+        <form action="send_email.php" method="post">
+            <label for="naam">Naam:</label>
+            <input type="text" id="naam" name="naam" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="bericht">Bericht:</label>
+            <textarea id="bericht" name="bericht" required></textarea>
+            <button type="submit">Verstuur</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Inge Coach. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
+</html>
