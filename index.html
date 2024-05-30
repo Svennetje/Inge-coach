@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
         }
 
@@ -18,6 +18,7 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            border-bottom: 5px solid #388E3C;
         }
 
         header h1 {
@@ -42,24 +43,29 @@
             color: white;
             text-decoration: none;
             font-size: 1.1em;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 5px;
         }
 
         nav ul li a:hover {
-            text-decoration: underline;
+            background-color: #388E3C;
         }
 
         section {
             padding: 50px 20px;
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 20px auto;
             background-color: white;
-            margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
         #over-mij .profile-info {
             display: flex;
             align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         #over-mij .profile-info img {
@@ -68,6 +74,7 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
+            border: 3px solid #4CAF50;
         }
 
         #diensten ul {
@@ -98,36 +105,50 @@
             margin-bottom: 10px;
         }
 
-        form {
+        .pakket {
             display: flex;
-            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 20px;
         }
 
-        form label {
-            margin: 10px 0 5px;
-            font-weight: bold;
+        .pakket-item {
+            background-color: #e2e2e2;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        form input, form textarea {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
+        .pakket-item h3 {
+            margin-top: 0;
         }
 
-        form button {
-            padding: 15px;
+        .pakket-item p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .pakket-item button {
+            padding: 10px 20px;
             border: none;
             background-color: #4CAF50;
             color: white;
-            font-size: 1.2em;
+            font-size: 1em;
             cursor: pointer;
             border-radius: 5px;
         }
 
-        form button:hover {
+        .pakket-item button:hover {
             background-color: #45a049;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
         }
 
         footer {
@@ -135,9 +156,7 @@
             color: white;
             text-align: center;
             padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border-top: 5px solid #222;
         }
 
         @media (max-width: 768px) {
@@ -148,6 +167,15 @@
 
             .profile-info img {
                 margin: 0 0 20px 0;
+            }
+
+            .pakket {
+                flex-direction: column;
+            }
+
+            .pakket-item {
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -160,6 +188,7 @@
                 <li><a href="#over-mij">Over Mij</a></li>
                 <li><a href="#diensten">Diensten</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pakketten">Pakketten</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -194,18 +223,33 @@
         </div>
         <!-- Voeg meer projecten toe indien nodig -->
     </section>
+    <section id="pakketten">
+        <h2>Pakketten</h2>
+        <div class="pakket">
+            <div class="pakket-item">
+                <h3>Basis Pakket</h3>
+                <p>€50/maand</p>
+                <button>Bestellen</button>
+            </div>
+            <div class="pakket-item">
+                <h3>Standaard Pakket</h3>
+                <p>€100/maand</p>
+                <button>Bestellen</button>
+            </div>
+            <div class="pakket-item">
+                <h3>Premium Pakket</h3>
+                <p>€150/maand</p>
+                <button>Bestellen</button>
+            </div>
+        </div>
+    </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>Neem contact met mij op via het onderstaande formulier:</p>
-        <form action="send_email.php" method="post">
-            <label for="naam">Naam:</label>
-            <input type="text" id="naam" name="naam" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="bericht">Bericht:</label>
-            <textarea id="bericht" name="bericht" required></textarea>
-            <button type="submit">Verstuur</button>
-        </form>
+        <div class="contact-info">
+            <p><strong>Telefoonnummer:</strong> +31 6 12345678</p>
+            <p><strong>Email:</strong> info@ingecoach.nl</p>
+            <p><strong>Adres:</strong> Hoofdstraat 123, 1234 AB, Amsterdam</p>
+        </div>
     </section>
     <footer>
         <p>&copy; 2024 Inge Coach. Alle rechten voorbehouden.</p>
